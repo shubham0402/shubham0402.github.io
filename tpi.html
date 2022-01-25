@@ -1,0 +1,104 @@
+﻿<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+	<title>Project: TPI</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+
+	<!-- Header -->
+	<header id="header">
+		<a href="index.html" class="title">Shubham's Portfolio</a>
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="tpi.html" class="active">Toilet Paper Indicator</a></li>
+				<!--<li><a href="elements.html">Elements</a></li>-->
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+		<!-- Main -->
+		<section id="main" class="wrapper">
+			<div class="inner">
+				<h1 class="major">Toilet Paper Indicator: Mechatronics Final Project</h1>
+				<!--<span class="image fit"><img src="images/pic04.jpg" alt="" /></span>-->
+				<p>
+					<!--<span class="image left"><img src="images/hydraplant/logo.png" alt="" /></span>-->
+					During the Spring of 2021, I took the Mechatronics Course (MAE 3780) at Cornell with Professor Hadas Kress-Gazit. I chose
+					to do the final Open Design Project in the field of Home Automation.<br /> <br />
+					Though I'm not proud of it, I have been the victim of sitting on the toilet and forgetting to check if there
+					is toilet paper remaining many times. As the final project for Mechatronics was Open Design, I chose to design
+					a visual indicator to alert a bathroom user if the toilet they are about to use does not have toilet paper.
+				</p>
+				<div class="box alt">
+					<div class="row gtr-uniform">
+						<video width="1600" height="600" controls poster="images/3780final/logo.png"><source src="images/3780final/finalproj.mp4"></video>
+					</div>
+				</div>
+				<br />
+				<ul class="actions fit">
+					<li><a href="https://drive.google.com/file/d/1hJItBhECr5df0e4a7t71KNpb38O9XrTf/view?usp=sharing" class="button primary fit">View Report</a></li>
+				</ul>
+
+				<p>
+					The device uses an ultrasonic sensor, servo, LED lights, and Arduino to accurately determine when the toilet paper roll is empty or very low and 
+					that the next user should replace it before sitting down. The ultrasonic sensor is positioned carefully to not capture the toilet paper roll when empty
+					and thus, return a value much higher than before. The arduino performs a time average in order to account for fluctuations in the motion of the toilet
+					paper roll, especially when its being used. The servo has two LEDs mounted on it, a red and green, which conform to standard expectations for the meaning
+					of those two colors. Most of the structures are mounted or created using cardboard because of the tight budget we were given and the abundance of cardboard
+					in my house at the time. 
+				</p>
+
+				<br />
+				<!--<div class="box alt">
+					<div class="row gtr-uniform">
+						<div class="col-4"><span class="image fit"><img src="images//cad.png" alt="" /></span></div>
+						<video width="475" height="438" controls><source src="images/hydraplant/hydraplant.mp4"></video>
+						<div class="col-4"><span class="image fit"><img src="images/hydraplant/forcediagram1.png" alt="" /></span></div>
+						<div class="col-4"><span class="image fit"><img src="images/hydraplant/process1.png" alt="" /></span></div>
+						<div class="col-4"><span class="image fit"><img src="images/hydraplant/donut.png" alt="" /></span></div>
+						<div class="col-4"><span class="image fit"><img src="images/hydraplant/flowers1.png" alt="" /></span></div>
+					</div>
+				</div>-->
+
+				<ul class="actions fit">
+					<li><a href="index.html" class="button fit">Return to Home</a></li>
+				</ul>
+
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer" class="wrapper alt">
+		<div class="inner">
+			<ul class="menu">
+				<li>&copy; Untitled. All rights reserved.</li>
+				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+</html>
