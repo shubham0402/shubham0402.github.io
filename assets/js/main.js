@@ -4,13 +4,25 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+$(function(){
+	$slideshow = $(".gallery ul");
+	$slideactive = $slideshow.find("li.each").first().addClass('active').show();
+	$(".direction .next").click(function(){
+	$slideactive = $slideshow.find("li.active").next();
+		if(!$slideactive.size())
+			$slideactive = $slideshow.find("li.each").first();		$slideshow.find("li.active").removeClass("active");
+			$slideactive.addClass("active");
+	});
+});
+
+
 (function($) {
 
 	var	$window = $(window),
 		$body = $('body'),
 		$sidebar = $('#sidebar');
 
-	// Breakpoints.
+		// Breakpoints.
 		breakpoints({
 			xlarge:   [ '1281px',  '1680px' ],
 			large:    [ '981px',   '1280px' ],
