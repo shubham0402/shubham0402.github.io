@@ -1,0 +1,148 @@
+﻿<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Englover</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">Shubham's Portfolio</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="englover.html" class="active">Englover<sup>2</sup></a></li>
+						<!--<li><a href="elements.html">Elements</a></li>-->
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+				<section id="main" class="wrapper">
+					<div class="inner">
+						<h1 class="major">Englover</h1>
+						<!--<span class="image fit"><img src="images/pic04.jpg" alt="" /></span>-->
+						<p>
+							<center><h3>The problem with gloves</h3></center>
+							Gloves are a widely used tool with powerful functionality. Once donned, they effectively prevent a user from spreading or receiving contamination 
+							from anything they handle without losing any of the complex dexterity that fingers have. However, if the objective is to eliminate contamination, 
+							the entire use cycle of the glove must be considered. Donning and the converse, 'doffing,' i.e. putting on and taking off a glove is a step that 
+							is not traditionally contamination free. Using ones hands to don or doff a glove inevitably results in the user touching the external-facing portion 
+							of the glove, thus exposing the user to potentially deadly contaminants and defeating the purpose of the glove. Historical examples can be found of 
+							outbreaks (notably, of Ebola) that were propogated due to hospital workers touching contaminated gloves.  
+						</p>
+						<p>
+							<span class="image left"><img src="images/Englover/engloverlogo2.png" alt="" style="max-width:100%;height:auto;"/></span> During the last semester of my
+							M. Eng program, I had the opportunity to engage in the design process to solve this seemingly straightforward problem. The scope of work for the project 
+							was to prototype a working model given the design challenge and to create a plan for large scale production. To be clear, all IP for this project belongs 
+							to and is protected by Englover and should not be shared publicly.
+						</p>
+						<br>
+						<p>
+							<center><h2>Scope of Work</h2></center>
+							<span class="image right"><img src="images/Englover/newestversion.png" alt="" style="max-width:100%;height:auto;"/></span> My work for Englover consisted 
+							primarily of making CAD, often preceded by 2D hand sketches, and physically cutting/printing pieces and putting them together. I used Autodesk Fusion 360 
+							for CAD and university facilities for laser cutting and 3D printing. I programmed the actuators using Arduino and for the scope of the project, controlled 
+							them using my laptop. On a high level, the machine works by creating a sealed box (finger jointed acrylic plates) where the glove comprises some portion of the outer surface area. A vacuum 
+							pump is then activated, creating a negative pressure difference that inflates the glove inwards and makes the donning process easy and fast.
+							The machine worked in 3 stages: 
+							<ul>
+							  <li>Pickup</li>
+							  <li>Expansion</li>
+							  <li>Evacuation</li>
+							</ul>
+						</p>
+						<br>
+						<p>
+							<center><h3>Pickup</h3></center>
+							<span class="image left"><img src="images/Englover/VPboth.png" alt="" style="max-width:100%;height:auto;"/></span>
+							The first step of the machine involves picking up the glove from a stack and moving it up and across to 'present' it to a slot shaped bill. There are 
+							2 components to the pickup: the 'sticking' component and the actuating component. Since the effector needs to go through many binary cycles of attaching/de-attaching 
+							from the glove, a suction plate made the most sense. The component is made of 3 laser cut acrylic plates that create a channel from an input tube to split into 
+							4 suction points. Though the pickup success rate was fairly high after some iterations, there was a margin of error of +/- 0.75" of the glove's mouth after lifting 
+							the glove due to the flimsiness of the glove material. This meant the expansion mechanism had to be able to account for different geometries of the glove mouth, i.e. 
+							accept a 'noisy' input.
+						</p>
+						<p>
+							<span class="image right"><img src="images/Englover/PickupBoth.gif" alt="" style="max-width:100%;height:auto;"/></span>
+							The actuating component needs to be position-controlled, fairly low-torque, and only 1 independant DOF. Thus a singular servo should be able to do the job. The servo 
+							and apparatus need to be secure relative to the box so they were mounted on two parallel plates that spanned the height of the box. The pickup mechanism traveled in 
+							between the plates for stability and the servo lay outside to take up less space. I considered 2 designs for the pickup apparatus: a simple 4 bar linkage with fairly
+							fixed ranges of motion, and a more adaptable 2-slot design where the axle rotates + travels (pinslots) in one and a corresponding 'angle control' key travels the other.
+							While the linkage is simpler, the second option allows us more flexibility in the path and more specifically the angle of incidence when the glove is presented to the 
+							extractors.
+						</p>
+						<p>
+							<center><h3>Expansion</h3></center>
+							<span class="image left"><img src="images/Englover/Expansionfull.gif" alt="" style="max-width:100%;height:auto;"/></span>
+							The expansion mechanism takes the loose glove presented by the pickup mechanism, stretches, and then deposits the glove around a slot shaped bill,  
+							completing the seal for the box. The mechanism needs high torque (gloves are quite resistive), multiple contact points with the glove, at least 4 total DOF,
+							actuation in both directions, compact (fitting inside the box without making the box ridiculously big). I dismissed any ideas that required more than 1 
+							motor primarily because I dislike unwarranted redundancy and enjoy the challenge of doing something with the minimal # of actuators. Though, 
+							that decision fit well with the other constraints as well. I designed a pulley system in which 1 central motor rotated a pulley which had strings
+							connected to 4 sets of finger. The fingers used 2 screws as pins to travel through a slot in the extractor that gently 
+							transitioned from pulling the glove out to down. This allowed me to achieve 8 different axes of motion using one motor. I used a rubber 'dental dam'
+							that we later replaced with a rubber band as a passive return mechanism.
+							
+						</p>
+						<p>
+							<center><h3>Evacuation</h3></center>
+							<span class="image right"><img src="images/Englover/Evacuation.gif" alt="" style="max-width:100%;height:auto;"/></span>
+							The evacuation depends highly on the permeability of the box. As a prototype, finger jointed acrylic plates are convenient but are not 
+							very airtight. With electrical tape, the problem was significantly mitigated but at scale the solution would certainly be a different box 
+							manufacturing method that allows it to be 2 pieces - something like vacuum formed composites with a hinge and rubber t - rather than 6+. Note 
+							in the video that the glove inflates inwards first (due to the pressure differential) and that makes it much easier to insert a hand.
+						</p>
+						<!--
+						<div class="box alt">
+							<div class="row gtr-uniform">
+								<div class="col-4"><span class="image fit"><img src="images/HRC2/drawing.png" alt="" style="max-width:100%;height:auto;"/></span></div>
+								<div class="col-4"><span class="image fit"><img src="images/HRC2/milesdisp1.png" alt="" style="max-width:100%;height:auto;"/></span></div>
+								<video style="max-width:33%;height:auto;" controls><source src="images/HRC2/cardemo.mp4"></video>
+							</div>
+						</div>
+						-->
+						<br /><br />
+
+
+						<ul class="actions fit">
+							<li><a href="index.html" class="button fit">Return to Home</a></li>
+						</ul>
+
+					</div>
+				</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
